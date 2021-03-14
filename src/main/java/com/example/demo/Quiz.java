@@ -3,8 +3,8 @@ package com.example.demo;
 import javax.persistence.*;
 
 @Entity
-@Table(name ="users")
-public class User {
+@Table(name ="quiz")
+public class Quiz {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -24,7 +24,7 @@ public class User {
     private int skippedVal;
 
 
-    public User(Integer id, String userId, String quizDate, String quizType, String quizId, int correctVal, int incorrectVal, int skippedVal) {
+    public Quiz(Integer id, String userId, String quizDate, String quizType, String quizId, int correctVal, int incorrectVal, int skippedVal) {
         this.id = id;
         this.userId = userId;
         this.quizDate = quizDate;
@@ -35,7 +35,7 @@ public class User {
         this.skippedVal = skippedVal;
     }
 
-    public User() {
+    public Quiz() {
 
     }
 
