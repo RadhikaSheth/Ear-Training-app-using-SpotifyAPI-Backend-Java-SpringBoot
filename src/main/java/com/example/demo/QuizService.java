@@ -28,7 +28,6 @@ public class QuizService {
         List<Quiz> userList = new ArrayList<>();
         if(checkUser(userId,accessToken)) {
             userList.addAll(quizRepo.findByUserId(userId));
-            //quizRepo.findByUserId(userId).forEach(userList::add);
         }
         return userList;
     }
