@@ -25,7 +25,7 @@ public class QuizService {
         return user.getId().equals(userId);
     }
     public List<Quiz> getProfile(String userId, String accessToken) throws ParseException, SpotifyWebApiException, IOException {
-        List<Quiz> userList = new ArrayList<>();
+        List<Quiz> userList = new ArrayList<Quiz>();
         if(checkUser(userId,accessToken)) {
             userList.addAll(quizRepo.findByUserId(userId));
             //quizRepo.findByUserId(userId).forEach(userList::add);

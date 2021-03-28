@@ -21,7 +21,7 @@ public class Controller {
 
     @PostMapping(path = "/entry", consumes = "application/json", produces = "application/json")
     @CrossOrigin(origins = "*")
-    public Quiz add(@RequestBody Quiz quiz,@RequestParam String userId, @RequestParam String accessToken) throws ParseException, SpotifyWebApiException, IOException {
+    public Quiz addQuiz(@RequestBody Quiz quiz,@RequestParam String userId, @RequestParam String accessToken) throws ParseException, SpotifyWebApiException, IOException {
         quizService.appendEntry(quiz,userId,accessToken);
         return quiz;
     }
