@@ -13,13 +13,13 @@ public class Controller {
     @Autowired
     private QuizService quizService;
 
-    @GetMapping(path = "/user", produces = "application/json")
+    @GetMapping(path = "https://ear-training-app-backend.herokuapp.com/user", produces = "application/json")
     @CrossOrigin(origins = "*")
     public List<Quiz> getUserProfile(@RequestParam String userId, @RequestParam String accessToken) throws ParseException, SpotifyWebApiException, IOException {
         return quizService.getProfile(userId,accessToken);
     }
 
-    @PostMapping(path = "/entry", consumes = "application/json", produces = "application/json")
+    @PostMapping(path = "https://ear-training-app-backend.herokuapp.com/entry", consumes = "application/json", produces = "application/json")
     @CrossOrigin(origins = "*")
     public Quiz addQuiz(@RequestBody Quiz quiz,@RequestParam String userId, @RequestParam String accessToken) throws ParseException, SpotifyWebApiException, IOException {
         quizService.appendEntry(quiz,userId,accessToken);
